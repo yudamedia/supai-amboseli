@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Supai Amboseli Design System - Earth tones inspired by Amboseli's landscape */
+
+@layer base {
+  :root {
+    /* Base earth tones */
+    --background: 45 15% 97%; /* Warm white like morning light */
+    --foreground: 25 30% 15%; /* Deep earth brown */
+
+    /* Card system */
+    --card: 45 20% 95%; /* Subtle sandy background */
+    --card-foreground: 25 30% 15%;
+
+    --popover: 45 20% 95%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - Terracotta earth */
+    --primary: 15 45% 35%; /* Rich terracotta */
+    --primary-foreground: 45 15% 97%;
+
+    /* Secondary - Sage green */
+    --secondary: 95 20% 75%; /* Muted sage */
+    --secondary-foreground: 25 30% 15%;
+
+    /* Muted tones */
+    --muted: 45 15% 90%; /* Light sandy beige */
+    --muted-foreground: 25 15% 45%; /* Warm gray */
+
+    /* Accent - Amboseli sky blue */
+    --accent: 200 40% 70%; /* Sky blue */
+    --accent-foreground: 25 30% 15%;
+
+    /* Kilimanjaro snow white */
+    --snow: 0 0% 98%;
+    --snow-foreground: 25 30% 15%;
+
+    /* Conservation green */
+    --conservation: 120 25% 35%; /* Deep forest green */
+    --conservation-foreground: 45 15% 97%;
+
+    /* Sunset colors */
+    --sunset-orange: 25 70% 55%; /* Warm sunset */
+    --sunset-pink: 350 40% 65%; /* Soft pink */
+    
+    /* Gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(45 25% 85%), hsl(25 35% 75%));
+    --gradient-sky: linear-gradient(135deg, hsl(200 60% 85%), hsl(220 40% 90%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 70% 55%), hsl(350 40% 65%));
+    --gradient-conservation: linear-gradient(135deg, hsl(120 25% 35%), hsl(95 20% 45%));
+
+    /* Shadows with earth tones */
+    --shadow-earth: 0 4px 20px hsl(25 30% 15% / 0.1);
+    --shadow-soft: 0 2px 10px hsl(25 30% 15% / 0.05);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 45 15% 97%;
+
+    --border: 45 20% 85%; /* Subtle earth border */
+    --input: 45 20% 90%;
+    --ring: 15 45% 35%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with warm earth undertones */
+    --background: 25 25% 8%; /* Dark earth */
+    --foreground: 45 15% 95%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 45 15% 95%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 45 15% 95%;
+
+    --primary: 15 45% 45%; /* Brighter terracotta for dark mode */
+    --primary-foreground: 45 15% 95%;
+
+    --secondary: 95 15% 25%; /* Darker sage */
+    --secondary-foreground: 45 15% 95%;
+
+    --muted: 25 20% 15%;
+    --muted-foreground: 45 10% 65%;
+
+    --accent: 200 40% 60%; /* Slightly muted sky blue */
+    --accent-foreground: 45 15% 95%;
+
+    --snow: 0 0% 95%;
+    --snow-foreground: 25 25% 8%;
+
+    --conservation: 120 25% 45%;
+    --conservation-foreground: 45 15% 95%;
+
+    --gradient-earth: linear-gradient(135deg, hsl(25 30% 20%), hsl(15 35% 25%));
+    --gradient-sky: linear-gradient(135deg, hsl(200 30% 25%), hsl(220 25% 30%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 50% 35%), hsl(350 30% 40%));
+    --gradient-conservation: linear-gradient(135deg, hsl(120 25% 25%), hsl(95 20% 30%));
+
+    --shadow-earth: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-soft: 0 2px 10px hsl(0 0% 0% / 0.2);
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 45 15% 95%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 15%;
+    --ring: 15 45% 45%;
+
+    --sidebar-background: 25 25% 8%;
+    --sidebar-foreground: 45 15% 95%;
+    --sidebar-primary: 15 45% 45%;
+    --sidebar-primary-foreground: 45 15% 95%;
+    --sidebar-accent: 25 20% 15%;
+    --sidebar-accent-foreground: 45 15% 95%;
+    --sidebar-border: 25 20% 20%;
+    --sidebar-ring: 15 45% 45%;
+  }
+
+  /* Custom variant with user-provided color palette */
+  .variant-custom {
+    /* #680747, #105A60, #141010, #385723 converted to HSL */
+    --background: 0 0% 97%; /* Light background */
+    --foreground: 0 0% 8%; /* #141010 - very dark gray */
+
+    --card: 0 0% 95%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 95%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 318 77% 22%; /* #680747 - dark purple/magenta */
+    --primary-foreground: 0 0% 97%;
+
+    --secondary: 185 71% 22%; /* #105A60 - teal/dark cyan */
+    --secondary-foreground: 0 0% 97%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 86 45% 25%; /* #385723 - dark olive green */
+    --accent-foreground: 0 0% 97%;
+
+    --conservation: 86 45% 25%; /* Using olive green */
+    --conservation-foreground: 0 0% 97%;
+
+    --gradient-earth: linear-gradient(135deg, hsl(318 77% 22%), hsl(185 71% 22%));
+    --gradient-sky: linear-gradient(135deg, hsl(185 71% 22%), hsl(86 45% 25%));
+    --gradient-sunset: linear-gradient(135deg, hsl(318 77% 22%), hsl(86 45% 25%));
+    --gradient-conservation: linear-gradient(135deg, hsl(86 45% 25%), hsl(185 71% 22%));
+
+    --shadow-earth: 0 4px 20px hsl(318 77% 22% / 0.2);
+    --shadow-soft: 0 2px 10px hsl(185 71% 22% / 0.15);
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 97%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 318 77% 22%;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 318 77% 22%;
+    --sidebar-primary-foreground: 0 0% 97%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 318 77% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 32;
+  }
+
+  /* Typography system */
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
+  }
+}
+
+@layer components {
+  /* Hero text styles */
+  .hero-title {
+    @apply font-serif text-5xl md:text-7xl font-bold leading-tight;
+    background: var(--gradient-earth);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    @apply font-inter text-lg md:text-xl text-muted-foreground leading-relaxed;
+  }
+
+  /* Section styles */
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-foreground;
+  }
+
+  .section-subtitle {
+    @apply font-inter text-lg text-muted-foreground leading-relaxed;
+  }
+
+  /* Conservation badge */
+  .conservation-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
+    background: var(--gradient-conservation);
+    color: hsl(var(--snow));
+  }
+
+  /* Earth button variants */
+  .btn-earth {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300;
+    background: var(--gradient-earth);
+    color: hsl(var(--foreground));
+    box-shadow: var(--shadow-earth);
+  }
+
+  .btn-earth:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-earth), 0 8px 25px hsl(15 45% 35% / 0.2);
+  }
+
+  .btn-conservation {
+    @apply px-6 py-3 rounded-full font-medium text-white transition-all duration-300;
+    background: var(--gradient-conservation);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-conservation:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-earth);
+  }
+
+  /* Parallax container */
+  .parallax-container {
+    @apply relative overflow-hidden;
+  }
+
+  .parallax-image {
+    @apply absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out;
+  }
+
+  /* Glass morphism effect */
+  .glass-effect {
+    @apply backdrop-blur-md border border-white/20;
+    background: linear-gradient(135deg, hsl(var(--background) / 0.8), hsl(var(--background) / 0.6));
+  }
+}
